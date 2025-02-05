@@ -35,7 +35,8 @@ async def first(event: th.types.UpdateNewMessage):
 
         if cmd in msgs_conf["help"]["trigers"]:
             await event.reply(msgs_conf["help"]["value"])
-
+        if cmd in msgs_conf["info"]["trigers"]:
+            await event.reply(msgs_conf["info"]["value"])
         if cmd in msgs_conf["job"]["trigers"]:
             await event.reply(job.get_job(user_id, text.split()[2:], msgs_conf, database))
 
